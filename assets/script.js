@@ -1,3 +1,41 @@
+var startButton = document.querySelector(".start-game");
+var setTimer = document.querySelector("#seconds");
+var nextButton = document.querySelector(".next");
+var numberCorrect = 0;
+var secondsLeft = 85;
+var timerInterval;
+var gameStarted = false;
+
+function startGame() {
+    gameStarted = true;
+    var questions = document.getElementById("question");
+    questions.innerHTML = "Question Text";
+   
+    var answer1 = document.getElementById("a_text");
+    answer1.innerHTML = "Answer 1 text";
+
+    var answer2 = document.getElementById("b_text");
+    answer2.innerHTML = "Answer 2 text";
+
+    var answer3 = document.getElementById("c_text");
+    answer3.innerHTML = "Answer 3 text";
+   
+    var answer4 = document.getElementById("d_text");
+    answer4.innerHTML = "Answer 4 text";
+}
+
+// function changeText() {
+//     var paragraph = document.getElementById("my-paragraph");
+//     paragraph.innerHTML = "New text!";
+//   }
+
+
+
+
+startButton.addEventListener("click", startGame );
+
+nextButton.addEventListener("click", nextButtonPress );
+
 // Pseudo Code: 
 // has a start button 
 // has a timer and quiz starts when user clicks start button
@@ -7,7 +45,7 @@
 // When the game is over the user can save initials and their score. 
 
 // What code will need: 
-// 1. For the start button we will need to place a document.querySelector(# or .) AND .addEventListener("click", startTheGame );
+// 1. For the start button we will need to place a document.querySelector(# or .) AND .addEventListener("click", startTheGame ); ✓
 //          a. var startButton = document.querySelector(".start-game");
 //          b. startButton.addEventListener("click", startTheGame ); 
 
