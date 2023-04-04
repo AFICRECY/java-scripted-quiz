@@ -1,11 +1,19 @@
 var startButton = document.querySelector(".start-game");
-var setTimer = document.querySelector("#seconds");
 var nextButton = document.querySelector(".next");
+// For the start button and the Next Button we will need to place a document.querySelector,
+// which is connected to the classes on the HTML button tags.
+var setTimer = document.querySelector("#seconds");
+// This querySelector is used to connect to the seconds id in the HTML, so that the timer and the seconds 
+// will be visible and interactive
 var question = document.getElementById("question");
+// The document.getElementById is connected to the question id on the HTML h1 tag so that it can populate the 
+// questions when the game has started
 var answerButton1 = document.querySelector(".answer1");
 var answerButton2 = document.querySelector(".answer2");
 var answerButton3 = document.querySelector(".answer3");
 var answerButton4 = document.querySelector(".answer4");
+// The above querySelectors also connect the below array of questionsAndAnswers to the HTML for the multiple 
+// choice options to be populated along with the question.
 var numberCorrect = 0;
 var secondsLeft = 85;
 var timerInterval;
@@ -17,7 +25,7 @@ var results
 
 
 function setTime() {
-        timerInterval= setInterval(function() {
+        var timerInterval= setInterval(function() {
         secondsLeft--;
         setTimer.textContent = secondsLeft;
         if(secondsLeft === 0){
@@ -25,14 +33,19 @@ function setTime() {
           clearInterval(timerInterval);}
         else if (correctAnswer == Null); {
         timerInterval= (var i = 0; i < secondsLeft.length; i--)
+        // If the user selects the wrong answer then the time is reduced. 
+        // Still needing some clarity on the set time interval concept and whether or not the length property should be applied. 
       }, 1000);
     }
+// The set time function is includes the setInterval() method which takes initates the countdown from the time the start button is pressed. 
+// When the countdown reaches zero, the action of the countdownstop. The clearInterval() method stops the execution of the interval. 
+// It takes one parameter: the variable name assigned to the interval
 
 
 
 
-
-
+// Below are the variable containing an array of objects which contain the content of the Multiple Choice Quiz. 
+// It includes the: Question, the multiple choice answer options, and the correctAnswer. 
 var questionsAndAnswers = [
        { query: "Which of the following is not a primitive data type in JavaScript?",
       answers: ["Number","String","Boolean","Object"],
@@ -76,10 +89,7 @@ correctAnswer: "for (var i = 0; i < 5",
 }
 ]
 
-// { query: "How are you?",
-// answers: ["a text content","b","c","d"],
-// correctAnswer: "a text content",
-// }, 
+
 startButton.addEventListener("click", questionOne );
 
 nextButton.addEventListener("click", nextButtonPress );
