@@ -2,339 +2,93 @@ var startButton = document.querySelector(".start-game");
 var setTimer = document.querySelector("#seconds");
 var nextButton = document.querySelector(".next");
 var question = document.getElementById("question");
-// var answerButton1 = document.querySelector(".answer1");
-// var answerButton2 = document.querySelector(".answer2");
-// var answerButton3 = document.querySelector(".answer3");
-// var answerButton4 = document.querySelector(".answer4");
-// var answerButton5 = document.querySelector(".answer5");
-// var answerButton6 = document.querySelector(".answer6");
-// var answerButton7 = document.querySelector(".answer7");
-// var answerButton8 = document.querySelector(".answer8");
-// var answerButton9 = document.querySelector(".answer9");
-// var answerButton10 = document.querySelector(".answer10");
-// var answerButton11 = document.querySelector(".answer11");
-// var answerButton12 = document.querySelector(".answer12");
-// var answerButton13 = document.querySelector(".answer13");
-// var answerButton14 = document.querySelector(".answer14");
-// var answerButton15 = document.querySelector(".answer15");
+var answerButton1 = document.querySelector(".answer1");
+var answerButton2 = document.querySelector(".answer2");
+var answerButton3 = document.querySelector(".answer3");
+var answerButton4 = document.querySelector(".answer4");
 var numberCorrect = 0;
 var secondsLeft = 85;
 var timerInterval;
 var gameStarted = false;
 var correctAnswer
 
-// function setTime() {
-//     timerInterval= setInterval(function() {
-//     secondsLeft--;
-    
-//     if(secondsLeft === 0){
-//       secretWord.textContent = "You Lost!";
-//       clearInterval(timerInterval);
-//     }
-//   }, 1000);
-// }
-
-// function Wins() {
-
-//     var SavedWins = localStorage.getItem("correct");
-//     if (SavedWins !== null) {
-//       winCount.textContent = SavedWins;
-//       numberCorrect =  SavedWins;
-//     } else {
-//       winCount.textContent = 0;
-//       numberCorrect = 0;
-//     }
-    
-// }
 
 
-var Questionz = [
-    { query: "How are you?",
-      answers: ["a text content","b","c","d"],
-      correctAnswer: "a text content",
-    }, { query: "How are you?",
-    answers: ["a text content","b","c","d"],
-    correctAnswer: "a text content",
-  }, { query: "How are you?",
-  answers: ["a text content","b","c","d"],
-  correctAnswer: "a text content",
+var questionsAndAnswers = [
+       { query: "Which of the following is not a primitive data type in JavaScript?",
+      answers: ["Number","String","Boolean","Object"],
+      correctAnswer: "Object",
+    }, 
+    { query: "What does the 'typeof' operator do in JavaScript?",
+    answers: ["Returns the data type of a variable","Checks if a variable is defined","Assigns a value to a variable","Concatenates two strings"],
+    correctAnswer: "Returns the data type of a variable",
+  }, 
+  { query: "Which of the following is not a comparison operator in JavaScript?",
+  answers: ["==","===","!=","=<"],
+  correctAnswer: "=<",
+}, 
+{ query: "What is the output of the following code: var x = true; console.log(!x)?",
+answers: ["True","False","Undefined","Error"],
+correctAnswer: "False",
+}, 
+{ query: "What does the “NaN” value represent in JavaScript?",
+answers: ["Not a number","Null value","Unefined value","Boolean value"],
+correctAnswer: "Not a number",
+}, 
+{ query: "What is the output of the following code: var x = 5; var y = “5”; console.log(x == y);?",
+answers: ["True","False","Undefined","Error"],
+correctAnswer: "True",
+}, 
+{ query: "What does the 'this' keyword refer to in JavaScript?",
+answers: ["The current function","The global object","The object that the function belongs to","The parent object of the current object"],
+correctAnswer: "The object that the function belongs to",
+}, 
+{ query: "What is the output of the following code: var x = [1, 2, 3]; console.log(x.length);?",
+answers: ["1","2","3","4"],
+correctAnswer: "3",
+}, 
+{ query: "What does the 'forEach' method do in JavaScript?",
+answers: ["Adds a new element to the end of an array","Removes an element from the beginning of an array","Executes a function once for each element in an array","Reverses the order of the elements in an array"],
+correctAnswer: "Executes a function once for each element in an array",
+}, 
+{ query: "What is the correct syntax for a “for” loop in JavaScript?",
+answers: ["for (var i = 0; i < 5; i++)","for (i = 0; i < 5; i++)","for (var i = 5; i > 0; i-)","for (i = 5; i > 0; i-)"],
+correctAnswer: "for (var i = 0; i < 5",
 }
 ]
 
+// { query: "How are you?",
+// answers: ["a text content","b","c","d"],
+// correctAnswer: "a text content",
+// }, 
+
+
+
 displayQuestion()
 function displayQuestion() {
-    question.textContent = Questionz[0].query
+    question.textContent = questionsAndAnswers[0].query
+    answers1.textContent = questionsAndAnswers[0].answers
+    answers2.textContent = questionsAndAnswers[0].answers
+    answers3.textContent = questionsAndAnswers[0].answers
+    answers4.textContent = questionsAndAnswers[0].answers
+
+    question.textContent = questionsAndAnswers[0].query[3]
+    answers1.textContent = questionsAndAnswers[0].answers[4]
+    answers2.textContent = questionsAndAnswers[0].answers[4]
+    answers3.textContent = questionsAndAnswers[0].answers[4]
+    answers4.textContent = questionsAndAnswers[0].answers[4]
+
+
 }
 
 
+function startQuiz()
 
-
-
-function questionOne() {
-    gameStarted = true;
-    var questions = document.getElementById("question");
-    questions.innerHTML = "Which of the following is not a primitive data type in JavaScript?";
-   
-    var answer1 = document.getElementById("a_text");
-    answer1.innerHTML = "Number";
-
-    var answer2 = document.getElementById("b_text");
-    answer2.innerHTML = "String";
-
-    var answer3 = document.getElementById("c_text");
-    answer3.innerHTML = "Boolean";
-   
-    var answer4 = document.getElementById("d_text");
-    answer4.innerHTML = "Object";
-}
-
-function answerOne() {
-    var correctOrNot = document.getElementById("results");
-    correctOrNot.innerHTML = "You're Wrong!";
-}
 
 answerButton1.addEventListener("click", answerOne );
 
 
 
-function questionTwo() {
-    
-    var questions = document.getElementById("question");
-    questions.innerHTML = "What does the 'typeof' operator do in JavaScript?";
-   
-    var answer1 = document.getElementById("a_text");
-    answer1.innerHTML = "Returns the data type of a variable";
-
-    var answer2 = document.getElementById("b_text");
-    answer2.innerHTML = "Checks if a variable is defined";
-
-    var answer3 = document.getElementById("c_text");
-    answer3.innerHTML = "Assigns a value to a variable";
-   
-    var answer4 = document.getElementById("d_text");
-    answer4.innerHTML = "Concatenates two strings";
-}
-
-function answerTwo() {
-    var correctOrNot = document.getElementById("results");
-    correctOrNot.innerHTML = "You're Wrong!";
-}
-
-answerButton2.addEventListener("click", answerTwo );
-
-
-
-function questionThree() {
-    
-    var questions = document.getElementById("question");
-    questions.innerHTML = "Which of the following is not a comparison operator in JavaScript?";
-   
-    var answer1 = document.getElementById("a_text");
-    answer1.innerHTML = "==";
-
-    var answer2 = document.getElementById("b_text");
-    answer2.innerHTML = "===";
-
-    var answer3 = document.getElementById("c_text");
-    answer3.innerHTML = "!=";
-   
-    var answer4 = document.getElementById("d_text");
-    answer4.innerHTML = "=<";
-}
-
-function answerThree() {
-    var correctOrNot = document.getElementById("results");
-    correctOrNot.innerHTML = "You're Wrong!";
-}
-
-answerButton3.addEventListener("click", answerThree );
-
-
-
-function questionFour() {
-    
-    var questions = document.getElementById("question");
-    questions.innerHTML = "What is the output of the following code: var x = true; console.log(!x)"
-   
-    var answer1 = document.getElementById("a_text");
-    answer1.innerHTML = "True";
-
-    var answer2 = document.getElementById("b_text");
-    answer2.innerHTML = "False";
-
-    var answer3 = document.getElementById("c_text");
-    answer3.innerHTML = "Undefined";
-   
-    var answer4 = document.getElementById("d_text");
-    answer4.innerHTML = "Error";
-}
-
-function answerFour() {
-    var correctOrNot = document.getElementById("results");
-    correctOrNot.innerHTML = "You're Wrong!";
-}
-
-answerButton4.addEventListener("click", answerFour );
-
-
-
-function questionFive() {
-    
-    var questions = document.getElementById("question");
-    questions.innerHTML = "What does the “NaN” value represent in JavaScript?";
-   
-    var answer1 = document.getElementById("a_text");
-    answer1.innerHTML = "Not a number";
-
-    var answer2 = document.getElementById("b_text");
-    answer2.innerHTML = "Null value";
-
-    var answer3 = document.getElementById("c_text");
-    answer3.innerHTML = "Undefined value";
-   
-    var answer4 = document.getElementById("d_text");
-    answer4.innerHTML = "Boolean value";
-}
-
-function answerFive() {
-    var correctOrNot = document.getElementById("results");
-    correctOrNot.innerHTML = "You're Wrong!";
-}
-
-answerButton5.addEventListener("click", answerFive );
-
-
-function questionSix() {
-    
-    var questions = document.getElementById("question");
-    questions.innerHTML = "What is the output of the following code: var x = 5; var y = “5”; console.log(x == y);";
-   
-    var answer1 = document.getElementById("a_text");
-    answer1.innerHTML = "True";
-
-    var answer2 = document.getElementById("b_text");
-    answer2.innerHTML = "False";
-
-    var answer3 = document.getElementById("c_text");
-    answer3.innerHTML = "Undefined";
-   
-    var answer4 = document.getElementById("d_text");
-    answer4.innerHTML = "Error";
-}
-
-function answerSix() {
-    var correctOrNot = document.getElementById("results");
-    correctOrNot.innerHTML = "You're Wrong!";
-}
-
-answerButton6.addEventListener("click", answerSix );
-
-
-
-function questionSeven() {
-    
-    var questions = document.getElementById("question");
-    questions.innerHTML = "What does the 'this' keyword refer to in JavaScript?";
-   
-    var answer1 = document.getElementById("a_text");
-    answer1.innerHTML = "The current function";
-
-    var answer2 = document.getElementById("b_text");
-    answer2.innerHTML = "The global object";
-
-    var answer3 = document.getElementById("c_text");
-    answer3.innerHTML = "The object that the function belongs to";
-   
-    var answer4 = document.getElementById("d_text");
-    answer4.innerHTML = "The parent object of the current object";
-}
-
-function answerSeven() {
-    var correctOrNot = document.getElementById("results");
-    correctOrNot.innerHTML = "You're Wrong!";
-}
-
-answerButton7.addEventListener("click", answerSeven );
-
-
-
-function questionEight() {
-    
-    var questions = document.getElementById("question");
-    questions.innerHTML = "What is the output of the following code: var x = [1, 2, 3]; console.log(x.length);";
-   
-    var answer1 = document.getElementById("a_text");
-    answer1.innerHTML = "1";
-
-    var answer2 = document.getElementById("b_text");
-    answer2.innerHTML = "2";
-
-    var answer3 = document.getElementById("c_text");
-    answer3.innerHTML = "3";
-   
-    var answer4 = document.getElementById("d_text");
-    answer4.innerHTML = "4";
-}
-
-function answerEight() {
-    var correctOrNot = document.getElementById("results");
-    correctOrNot.innerHTML = "You're Wrong!";
-}
-
-answerButton8.addEventListener("click", answerEight );
-
-
-
-function questionNine() {
-    
-    var questions = document.getElementById("question");
-    questions.innerHTML = "What does the 'forEach' method do in JavaScript?";
-   
-    var answer1 = document.getElementById("a_text");
-    answer1.innerHTML = "Adds a new element to the end of an array";
-
-    var answer2 = document.getElementById("b_text");
-    answer2.innerHTML = "Removes an element from the beginning of an array";
-
-    var answer3 = document.getElementById("c_text");
-    answer3.innerHTML = "Executes a function once for each element in an array";
-   
-    var answer4 = document.getElementById("d_text");
-    answer4.innerHTML = "Reverses the order of the elements in an array";
-}
-
-function answerNine() {
-    var correctOrNot = document.getElementById("results");
-    correctOrNot.innerHTML = "You're Wrong!";
-}
-
-answerButton9.addEventListener("click", answerNine );
-
-
-function questionTen() {
-    
-    var questions = document.getElementById("question");
-    questions.innerHTML = "What is the correct syntax for a “for” loop in JavaScript?";
-   
-    var answer1 = document.getElementById("a_text");
-    answer1.innerHTML = "for (var i = 0; i < 5; i++)";
-
-    var answer2 = document.getElementById("b_text");
-    answer2.innerHTML = "for (i = 0; i < 5; i++)";
-
-    var answer3 = document.getElementById("c_text");
-    answer3.innerHTML = "for (var i = 5; i > 0; i-)";
-   
-    var answer4 = document.getElementById("d_text");
-    answer4.innerHTML = "for (i = 5; i > 0; i-)";
-}
-
-function answerTen() {
-    var correctOrNot = document.getElementById("results");
-    correctOrNot.innerHTML = "You're Wrong!";
-}
-
-answerButton10.addEventListener("click", answerTen );
 
 
 
@@ -520,3 +274,44 @@ nextButton.addEventListener("click", nextButtonPress );
 //          a.declare local variables for (game started=true, the questions as objects?)
 //          b. Make sure that the setTime function is called in the start game function (at the end)
 // 5. Make a function for a set time interval and inside make a object that contains the associated properties.(timerInterval, seconds left) 
+
+
+
+
+// function setTime() {
+//     timerInterval= setInterval(function() {
+//     secondsLeft--;
+    
+//     if(secondsLeft === 0){
+//       secretWord.textContent = "You Lost!";
+//       clearInterval(timerInterval);
+//     }
+//   }, 1000);
+// }
+
+// function Wins() {
+
+//     var SavedWins = localStorage.getItem("correct");
+//     if (SavedWins !== null) {
+//       winCount.textContent = SavedWins;
+//       numberCorrect =  SavedWins;
+//     } else {
+//       winCount.textContent = 0;
+//       numberCorrect = 0;
+//     }
+    
+// }// var answerButton1 = document.querySelector(".answer1");
+// var answerButton2 = document.querySelector(".answer2");
+// var answerButton3 = document.querySelector(".answer3");
+// var answerButton4 = document.querySelector(".answer4");
+// var answerButton5 = document.querySelector(".answer5");
+// var answerButton6 = document.querySelector(".answer6");
+// var answerButton7 = document.querySelector(".answer7");
+// var answerButton8 = document.querySelector(".answer8");
+// var answerButton9 = document.querySelector(".answer9");
+// var answerButton10 = document.querySelector(".answer10");
+// var answerButton11 = document.querySelector(".answer11");
+// var answerButton12 = document.querySelector(".answer12");
+// var answerButton13 = document.querySelector(".answer13");
+// var answerButton14 = document.querySelector(".answer14");
+// var answerButton15 = document.querySelector(".answer15");
