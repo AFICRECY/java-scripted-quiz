@@ -1,49 +1,69 @@
 var startButton = document.querySelector(".start-game");
 var setTimer = document.querySelector("#seconds");
 var nextButton = document.querySelector(".next");
-var answerButton1 = document.querySelector(".answer1");
-var answerButton2 = document.querySelector(".answer2");
-var answerButton3 = document.querySelector(".answer3");
-var answerButton4 = document.querySelector(".answer4");
-var answerButton5 = document.querySelector(".answer5");
-var answerButton6 = document.querySelector(".answer6");
-var answerButton7 = document.querySelector(".answer7");
-var answerButton8 = document.querySelector(".answer8");
-var answerButton9 = document.querySelector(".answer9");
-var answerButton10 = document.querySelector(".answer10");
-var answerButton11 = document.querySelector(".answer11");
-var answerButton12 = document.querySelector(".answer12");
-var answerButton13 = document.querySelector(".answer13");
-var answerButton14 = document.querySelector(".answer14");
-var answerButton15 = document.querySelector(".answer15");
+var question = document.getElementById("question");
+// var answerButton1 = document.querySelector(".answer1");
+// var answerButton2 = document.querySelector(".answer2");
+// var answerButton3 = document.querySelector(".answer3");
+// var answerButton4 = document.querySelector(".answer4");
+// var answerButton5 = document.querySelector(".answer5");
+// var answerButton6 = document.querySelector(".answer6");
+// var answerButton7 = document.querySelector(".answer7");
+// var answerButton8 = document.querySelector(".answer8");
+// var answerButton9 = document.querySelector(".answer9");
+// var answerButton10 = document.querySelector(".answer10");
+// var answerButton11 = document.querySelector(".answer11");
+// var answerButton12 = document.querySelector(".answer12");
+// var answerButton13 = document.querySelector(".answer13");
+// var answerButton14 = document.querySelector(".answer14");
+// var answerButton15 = document.querySelector(".answer15");
 var numberCorrect = 0;
 var secondsLeft = 85;
 var timerInterval;
 var gameStarted = false;
 var correctAnswer
 
-function setTime() {
-    timerInterval= setInterval(function() {
-    secondsLeft--;
+// function setTime() {
+//     timerInterval= setInterval(function() {
+//     secondsLeft--;
     
-    if(secondsLeft === 0){
-      secretWord.textContent = "You Lost!";
-      clearInterval(timerInterval);
-    }
-  }, 1000);
+//     if(secondsLeft === 0){
+//       secretWord.textContent = "You Lost!";
+//       clearInterval(timerInterval);
+//     }
+//   }, 1000);
+// }
+
+// function Wins() {
+
+//     var SavedWins = localStorage.getItem("correct");
+//     if (SavedWins !== null) {
+//       winCount.textContent = SavedWins;
+//       numberCorrect =  SavedWins;
+//     } else {
+//       winCount.textContent = 0;
+//       numberCorrect = 0;
+//     }
+    
+// }
+
+
+var Questionz = [
+    { query: "How are you?",
+      answers: ["a text content","b","c","d"],
+      correctAnswer: "a text content",
+    }, { query: "How are you?",
+    answers: ["a text content","b","c","d"],
+    correctAnswer: "a text content",
+  }, { query: "How are you?",
+  answers: ["a text content","b","c","d"],
+  correctAnswer: "a text content",
 }
+]
 
-function Wins() {
-
-    var SavedWins = localStorage.getItem("correct");
-    if (SavedWins !== null) {
-      winCount.textContent = SavedWins;
-      numberCorrect =  SavedWins;
-    } else {
-      winCount.textContent = 0;
-      numberCorrect = 0;
-    }
-    
+displayQuestion()
+function displayQuestion() {
+    question.textContent = Questionz[0].query
 }
 
 
@@ -472,41 +492,6 @@ nextButton.addEventListener("click", nextButtonPress );
 // click the next button the integer will increase by an increment. So when your clicking the 
 // next button, if current question is true, then everything inside the if statement is populating 
 // everything for question 2.
-
-
-
-
-
-
-
-
-
-
-// function userSelection() {
-//     var rightChoice = ""
-//     if  rightChoice == "a_text" {
-//         else 
-//     }
-
-//     for (var i = 0; i < 1; i++) {
-//         var questionText = document.createTextNode(questions[i].question);
-// }
-
-
-
-
-// set variable of what is the correct answer and 
-
-
-
-
-// function changeText() {
-//     var paragraph = document.getElementById("my-paragraph");
-//     paragraph.innerHTML = "New text!";
-//   }
-
-
-
 
 
 
