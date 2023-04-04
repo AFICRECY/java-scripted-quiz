@@ -15,12 +15,13 @@ var answerButton4 = document.querySelector(".answer4");
 // The above querySelectors also connect the below array of questionsAndAnswers to the HTML for the multiple 
 // choice options to be populated along with the question.
 var numberCorrect = 0;
+var numWrong = 0;
 var secondsLeft = 85;
 var timerInterval;
 var gameStarted = false;
-var correctAnswer
-var userInput
-var results 
+var correctAnswer;
+var userInput;
+var results;
 
 
 
@@ -93,6 +94,9 @@ correctAnswer: "for (var i = 0; i < 5",
 startButton.addEventListener("click", questionOne );
 
 nextButton.addEventListener("click", nextButtonPress );
+//Here I used the addEventListener() method, which took in two parameters (the click event) becayse we want something to happen when a user clicks on the startButton and also the second parameter, the action
+//  that we want performed when a user clicks the respective button. The same logic can be applied to the "next" button as well. 
+
 
 
 displayQuestion()
@@ -113,27 +117,36 @@ function displayQuestion() {
 }
 
 
-function startQuiz()
-    gameStarted = true;
-    
-    
-    
-   
-    } 
-
-    
+function startQuiz() {
+    gameStarted = true; 
+    questionsAndAnswers
     displayQuestion();
     setTime();
+}
+
+
+function finalScore() {
+    var numberCorrect = 0;
+    var numWrong = 0;
+    foreach. button(".next") {
+       for (var correctAnswer = "get value");
+        if ( numWrong = Null); {
+            answersCorrect++
+        }
+        correctAnswer++;
+    }
+    var finalScore = Math.floor((numCorrect / numWrong * 100));
+    document.getElementById("scoreDisplay").innerHTML = finalScore;
+}
+// This function is intended to count the number of questions answered correctly versus incorrectly. 
+// When the quiz has concluded I would like for the number correct and the number wrong to be divided and 
+// the result to be multiplied by 100 so that the percentage is stored in the variable "finalScore" and is 
+// displayed on the HTML document where the id "score-display" is. 
 
 
 
-
-
-
-
-
-
-answerButton1.addEventListener("click", answerOne );
+answerButton1.addEventListener("click", startQuiz );
+// This event listener is supposed to (with a click event) initiate the quiz to start 
 
 
 
