@@ -11,6 +11,25 @@ var secondsLeft = 85;
 var timerInterval;
 var gameStarted = false;
 var correctAnswer
+var userInput
+var results 
+
+
+
+function setTime() {
+        timerInterval= setInterval(function() {
+        secondsLeft--;
+        setTimer.textContent = secondsLeft;
+        if(secondsLeft === 0){
+          h1.textContent = "You Lost!";
+          clearInterval(timerInterval);}
+        else if (correctAnswer == Null); {
+        timerInterval= (var i = 0; i < secondsLeft.length; i--)
+      }, 1000);
+    }
+
+
+
 
 
 
@@ -61,7 +80,9 @@ correctAnswer: "for (var i = 0; i < 5",
 // answers: ["a text content","b","c","d"],
 // correctAnswer: "a text content",
 // }, 
+startButton.addEventListener("click", questionOne );
 
+nextButton.addEventListener("click", nextButtonPress );
 
 
 displayQuestion()
@@ -83,6 +104,23 @@ function displayQuestion() {
 
 
 function startQuiz()
+    gameStarted = true;
+    
+    
+    
+   
+    } 
+
+    
+    displayQuestion();
+    setTime();
+
+
+
+
+
+
+
 
 
 answerButton1.addEventListener("click", answerOne );
@@ -90,162 +128,6 @@ answerButton1.addEventListener("click", answerOne );
 
 
 
-
-
-function questionEleven() {
-    
-    var questions = document.getElementById("question");
-    questions.innerHTML = "What is the output of the following code: console.log(Math.random());";
-   
-    var answer1 = document.getElementById("a_text");
-    answer1.innerHTML = "0";
-
-    var answer2 = document.getElementById("b_text");
-    answer2.innerHTML = "0.5";
-
-    var answer3 = document.getElementById("c_text");
-    answer3.innerHTML = "1";
-   
-    var answer4 = document.getElementById("d_text");
-    answer4.innerHTML = "A random number between 0 and 1";
-}
-
-function answerEleven() {
-    var correctOrNot = document.getElementById("results");
-    correctOrNot.innerHTML = "You're Wrong!";
-}
-
-answerButton11.addEventListener("click", answerEleven );
-
-
-
-function questionTwelve() {
-    
-    var questions = document.getElementById("question");
-    questions.innerHTML = "What is the difference between '==' and '===' operators in JavaScript?";
-   
-    var answer1 = document.getElementById("a_text");
-    answer1.innerHTML = "They are interchangeable";
-
-    var answer2 = document.getElementById("b_text");
-    answer2.innerHTML = "'==' checks for value equality, while '===' checks for value and type equality";
-
-    var answer3 = document.getElementById("c_text");
-    answer3.innerHTML = "'===' checks for value equality, while '==' checks for value and type equality";
-   
-    var answer4 = document.getElementById("d_text");
-    answer4.innerHTML = "They both perform the same operation";
-}
-
-function answerTwelve() {
-    var correctOrNot = document.getElementById("results");
-    correctOrNot.innerHTML = "You're Wrong!";
-}
-
-answerButton12.addEventListener("click", answerTwelve );
-
-
-
-function questionThirteen() {
-    
-    var questions = document.getElementById("question");
-    questions.innerHTML = "Which of the following is not a valid JavaScript array method?";
-   
-    var answer1 = document.getElementById("a_text");
-    answer1.innerHTML = "push()";
-
-    var answer2 = document.getElementById("b_text");
-    answer2.innerHTML = "pop()";
-
-    var answer3 = document.getElementById("c_text");
-    answer3.innerHTML = "shift()";
-   
-    var answer4 = document.getElementById("d_text");
-    answer4.innerHTML = "splice()";
-}
-
-function answerThirteen() {
-    var correctOrNot = document.getElementById("results");
-    correctOrNot.innerHTML = "You're Wrong!";
-}
-
-answerButton13.addEventListener("click", answerThirteen );
-
-
-
-function questionFourteen() {
-    
-    var questions = document.getElementById("question");
-    questions.innerHTML = "Which of the following is not a valid way to declare a variable in JavaScript?";
-   
-    var answer1 = document.getElementById("a_text");
-    answer1.innerHTML = "var x;";
-
-    var answer2 = document.getElementById("b_text");
-    answer2.innerHTML = "let y;";
-
-    var answer3 = document.getElementById("c_text");
-    answer3.innerHTML = "const z;";
-   
-    var answer4 = document.getElementById("d_text");
-    answer4.innerHTML = "variable w;";
-}
-
-function answerFourteen() {
-    var correctOrNot = document.getElementById("results");
-    correctOrNot.innerHTML = "You're Wrong!";
-}
-
-answerButton14.addEventListener("click", answerFourteen );
-
-
-
-function questionFifteen() {
-    
-    var questions = document.getElementById("question");
-    questions.innerHTML = "What is the output of the following code: var x = true; var y = false; console.log(x || y);";
-   
-    var answer1 = document.getElementById("a_text");
-    answer1.innerHTML = "True";
-
-    var answer2 = document.getElementById("b_text");
-    answer2.innerHTML = "False";
-
-    var answer3 = document.getElementById("c_text");
-    answer3.innerHTML = "Error";
-   
-    var answer4 = document.getElementById("d_text");
-    answer4.innerHTML = "NaN";
-}
-
-function answerFifteen() {
-    var correctOrNot = document.getElementById("results");
-    correctOrNot.innerHTML = "You're Wrong!";
-}
-
-answerButton15.addEventListener("click", answerFifteen );
-
-
-startButton.addEventListener("click", questionOne );
-
-nextButton.addEventListener("click", nextButtonPress );
-
-
-
-
-
-
-
-
-
-
-
-// function for the next nextButton
-// use an integer to say, the first time you click the next button, it will populate with text 
-// from question 2. And youll have some integer that will say current question, everytime you 
-// click the next button the integer will increase by an increment. So when your clicking the 
-// next button, if current question is true, then everything inside the if statement is populating 
-// everything for question 2.
 
 
 
@@ -278,16 +160,7 @@ nextButton.addEventListener("click", nextButtonPress );
 
 
 
-// function setTime() {
-//     timerInterval= setInterval(function() {
-//     secondsLeft--;
-    
-//     if(secondsLeft === 0){
-//       secretWord.textContent = "You Lost!";
-//       clearInterval(timerInterval);
-//     }
-//   }, 1000);
-// }
+// 
 
 // function Wins() {
 
