@@ -8,7 +8,7 @@
 
 ## Description:
 
-[Visit Deployed Site]: 
+[Visit Deployed Site]: https://aficrecy.github.io/java-scripted-quiz/
 
 This web application is a fun and engaging JavaScript focused coding assessment which contains various questions and multiple choice answers ranging from many different topics within the JavaScript language. The difficulty level of the questions range from simple vocabulary terms, to figuring out what a function may return, or even deciphering a for loop or an if else statement. This application also includes a Timer set at 85 seconds, counting down until 0 seconds. Every wrong answer will subtract time from the quiz-taker’s time. Finally, the application includes a section where, once the game has been either completed or won, a user is able to enter their initials and their score will be shown. 
 
