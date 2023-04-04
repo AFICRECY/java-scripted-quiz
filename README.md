@@ -61,7 +61,7 @@ It includes the: Question, the multiple choice answer options, and the correctAn
 ```
 var questionsAndAnswers = [
       { query: "Which of the following is not a primitive data type in JavaScript?",
-     answers: ["Number","String","Boolean","Object"],
+     answers: [Number, String, Boolean, Object],
      correctAnswer: "Object",
    },
    { query: "What does the 'typeof' operator do in JavaScript?",
@@ -86,7 +86,6 @@ function displayQuestion() {
 
 
 
-
 ```
 function setTime() {
        var timerInterval= setInterval(function() {
@@ -107,7 +106,7 @@ function setTime() {
 
 
 ### Usage:
-
+Coding assessments are a very important part of testing a programmer's knowledge of a language or software. More specifically, coding assessments are useful to developers looking for employment, or a company/employer looking for worthy and skilled candidates. Testing ones knowledge is key in preparation for interviews as well as ensuring whether or not you are truly proficient in certain coding languages. 
 
 
 ## Credits:
