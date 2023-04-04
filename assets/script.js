@@ -172,12 +172,10 @@ function displayQuestion() {
 
 function startQuiz() {
     gameStarted = true; 
-    questionsAndAnswers
     displayQuestion();
     setTime();
 }
-
-
+// This function starts the timer as well as begins the click event for the quiz to begin. 
 
 
 
