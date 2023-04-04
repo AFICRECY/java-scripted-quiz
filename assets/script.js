@@ -15,6 +15,7 @@ var answerButton4 = document.querySelector(".answer4");
 // The above querySelectors also connect the below array of questionsAndAnswers to the HTML for the multiple 
 // choice options to be populated along with the question.
 var numberCorrect = 0;
+var buttonTags = document.querySelectorAll("button")''
 var numWrong = 0;
 var secondsLeft = 85;
 var timerInterval;
@@ -23,7 +24,7 @@ var correctAnswer;
 var userInput;
 var results;
 
-
+buttonTags[0].setAttribute("style", "color: white;");
 
 function setTime() {
         var timerInterval= setInterval(function() {
