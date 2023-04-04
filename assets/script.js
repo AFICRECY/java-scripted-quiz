@@ -33,11 +33,12 @@ function setTime() {
           h1.textContent = "You Lost!";
           clearInterval(timerInterval);}
         else if (correctAnswer == Null); {
-        timerInterval= (var i = 0; i < secondsLeft.length; i--)
+        timerInterval = (var i = 0; i < secondsLeft.length; i--)
         // If the user selects the wrong answer then the time is reduced. 
         // Still needing some clarity on the set time interval concept and whether or not the length property should be applied. 
       }, 1000);
     }
+
 // The set time function is includes the setInterval() method which takes initates the countdown from the time the start button is pressed. 
 // When the countdown reaches zero, the action of the countdownstop. The clearInterval() method stops the execution of the interval. 
 // It takes one parameter: the variable name assigned to the interval
@@ -91,7 +92,8 @@ correctAnswer: "for (var i = 0; i < 5",
 ]
 
 
-startButton.addEventListener("click", questionOne );
+startButton.addEventListener("click", startQuiz );
+// This event listener is supposed to (with a click event) initiate the quiz to start 
 
 nextButton.addEventListener("click", nextButtonPress );
 //Here I used the addEventListener() method, which took in two parameters (the click event) becayse we want something to happen when a user clicks on the startButton and also the second parameter, the action
@@ -99,6 +101,9 @@ nextButton.addEventListener("click", nextButtonPress );
 
 
 
+// The below code is the displayQuestions function which is initiated when the startButton is pressed and the click event starts. 
+// This is an example of being able to access elements and ids using dot notation and highlightin what index the object or value that I 
+// am ttargeting is at. 
 displayQuestion()
 function displayQuestion() {
     question.textContent = questionsAndAnswers[0].query
@@ -107,14 +112,62 @@ function displayQuestion() {
     answers3.textContent = questionsAndAnswers[0].answers
     answers4.textContent = questionsAndAnswers[0].answers
 
+    question.textContent = questionsAndAnswers[0].query[1]
+    answers1.textContent = questionsAndAnswers[0].answers[2]
+    answers2.textContent = questionsAndAnswers[0].answers[2]
+    answers3.textContent = questionsAndAnswers[0].answers[2]
+    answers4.textContent = questionsAndAnswers[0].answers[2]
+
+    question.textContent = questionsAndAnswers[0].query[2]
+    answers1.textContent = questionsAndAnswers[0].answers[3]
+    answers2.textContent = questionsAndAnswers[0].answers[3]
+    answers3.textContent = questionsAndAnswers[0].answers[3]
+    answers4.textContent = questionsAndAnswers[0].answers[3]
+
     question.textContent = questionsAndAnswers[0].query[3]
     answers1.textContent = questionsAndAnswers[0].answers[4]
     answers2.textContent = questionsAndAnswers[0].answers[4]
     answers3.textContent = questionsAndAnswers[0].answers[4]
     answers4.textContent = questionsAndAnswers[0].answers[4]
 
+    question.textContent = questionsAndAnswers[0].query[4]
+    answers1.textContent = questionsAndAnswers[0].answers[5]
+    answers2.textContent = questionsAndAnswers[0].answers[5]
+    answers3.textContent = questionsAndAnswers[0].answers[5]
+    answers4.textContent = questionsAndAnswers[0].answers[5]
 
+    question.textContent = questionsAndAnswers[0].query[4]
+    answers1.textContent = questionsAndAnswers[0].answers[5]
+    answers2.textContent = questionsAndAnswers[0].answers[5]
+    answers3.textContent = questionsAndAnswers[0].answers[5]
+    answers4.textContent = questionsAndAnswers[0].answers[5]
+
+    question.textContent = questionsAndAnswers[0].query[5]
+    answers1.textContent = questionsAndAnswers[0].answers[6]
+    answers2.textContent = questionsAndAnswers[0].answers[6]
+    answers3.textContent = questionsAndAnswers[0].answers[6]
+    answers4.textContent = questionsAndAnswers[0].answers[6]
+
+    question.textContent = questionsAndAnswers[0].query[7]
+    answers1.textContent = questionsAndAnswers[0].answers[8]
+    answers2.textContent = questionsAndAnswers[0].answers[8]
+    answers3.textContent = questionsAndAnswers[0].answers[8]
+    answers4.textContent = questionsAndAnswers[0].answers[8]
+
+    question.textContent = questionsAndAnswers[0].query[8]
+    answers1.textContent = questionsAndAnswers[0].answers[9]
+    answers2.textContent = questionsAndAnswers[0].answers[9]
+    answers3.textContent = questionsAndAnswers[0].answers[9]
+    answers4.textContent = questionsAndAnswers[0].answers[9]
+
+    question.textContent = questionsAndAnswers[0].query[9]
+    answers1.textContent = questionsAndAnswers[0].answers[10]
+    answers2.textContent = questionsAndAnswers[0].answers[10]
+    answers3.textContent = questionsAndAnswers[0].answers[10]
+    answers4.textContent = questionsAndAnswers[0].answers[10]
 }
+
+
 
 
 function startQuiz() {
@@ -125,18 +178,21 @@ function startQuiz() {
 }
 
 
+
+
+
 function finalScore() {
     var numberCorrect = 0;
     var numWrong = 0;
+    var numberCorrect = localStorage.getItem(correctAnswer);
     foreach. button(".next") {
        for (var correctAnswer = "get value");
-        if ( numWrong = Null); {
-            answersCorrect++
-        }
+        if ( numWrong = Null); 
         correctAnswer++;
     }
     var finalScore = Math.floor((numCorrect / numWrong * 100));
     document.getElementById("scoreDisplay").innerHTML = finalScore;
+    
 }
 // This function is intended to count the number of questions answered correctly versus incorrectly. 
 // When the quiz has concluded I would like for the number correct and the number wrong to be divided and 
@@ -145,8 +201,7 @@ function finalScore() {
 
 
 
-answerButton1.addEventListener("click", startQuiz );
-// This event listener is supposed to (with a click event) initiate the quiz to start 
+
 
 
 
@@ -185,16 +240,6 @@ answerButton1.addEventListener("click", startQuiz );
 
 // 
 
-// function Wins() {
-
-//     var SavedWins = localStorage.getItem("correct");
-//     if (SavedWins !== null) {
-//       winCount.textContent = SavedWins;
-//       numberCorrect =  SavedWins;
-//     } else {
-//       winCount.textContent = 0;
-//       numberCorrect = 0;
-//     }
     
 // }// var answerButton1 = document.querySelector(".answer1");
 // var answerButton2 = document.querySelector(".answer2");
