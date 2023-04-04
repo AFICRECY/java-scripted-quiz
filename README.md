@@ -22,6 +22,11 @@ This web application is a fun and engaging JavaScript focused coding assessment 
 * License
 
 
+### Installation:
+
+This project required a knowledge of JavaScript, Functions, document window methods, querySelector, getElementById, Event Listeners, textContent, Objects, Variables, For Loops, If/Else Statements, and Data Types. The coding languages in HTML, Css, and Java Script were all incorporated into this web application and were linked to each-other. The code in the Java Script facilitates the interactivity of the website and incorporates the usage of buttons and querySelectors, and eventListeners, as well as the usage of arrays containing objects, to aid in connecting the bare skeleton of the HTML to a JavaScript quiz with multiple choice answers. 
+
+
 Traversing the DOM: https://zellwk.com/blog/dom-traversals/
 Input Multiple choice: http://www.bellaonline.com/articles/art22573.asp
 Document Object Model: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model 
